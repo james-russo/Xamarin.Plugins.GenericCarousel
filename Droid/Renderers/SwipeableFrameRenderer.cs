@@ -35,7 +35,7 @@ namespace Xamarin.Plugins.GenericCarousel.Droid.Renderers
 				((GenericCarouselView)Element).SwipeRight ();
 				break;
 			case SwipeGestureListener.SwipeType.Tap:
-				((GenericCarouselView)Element).NavigateToChannel ();
+				((GenericCarouselView)Element).NavigateTo ();
 				break;
 			}
 		}

@@ -202,7 +202,7 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 			carousel.SwipeRight ();
 		}
 
-		public abstract void NavigateToChannel();
+		public abstract void NavigateTo();
 
 	}
 }
