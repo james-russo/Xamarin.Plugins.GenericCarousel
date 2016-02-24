@@ -12,7 +12,7 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 		public static readonly BindableProperty ViewsProperty =
 			BindableProperty.Create<GenericCarousel, ObservableCollection<GenericCarouselView>> (p => p.ContentViews, default(ObservableCollection<GenericCarouselView>));
 
-		private ObservableCollection<GenericCarouselView> ContentViews {
+		public ObservableCollection<GenericCarouselView> ContentViews {
 			get { return (ObservableCollection<GenericCarouselView>)GetValue (ViewsProperty); }
 			set { SetValue (ViewsProperty, value); }
 		}
@@ -21,7 +21,7 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 
 		public float DotSize = 5;
 
-        private IList<Button> Dots = new List<Button>();
+		public IList<Button> Dots {get; private set;}
 
 		public GenericCarouselView CurrentView { get; private set; }
 
@@ -34,6 +34,8 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 		public GenericCarousel ()
 		{
 			ContentViews = new ObservableCollection<GenericCarouselView> ();
+
+			Dots = new List<Button> ();
 
 			ContentViews.CollectionChanged += Images_CollectionChanged;
 

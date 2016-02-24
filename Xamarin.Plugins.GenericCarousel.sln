@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Plugins.GenericCaro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Plugins.GenericCarousel.Droid", "Droid\Xamarin.Plugins.GenericCarousel.Droid.csproj", "{DDF3397B-931E-410A-8DA5-59A7F39A3482}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Plugins.GenericCarousel.Tests", "Xamarin.Plugins.GenericCarousel.Tests\Xamarin.Plugins.GenericCarousel.Tests.csproj", "{467271C7-6A62-48EE-A7F4-38D3FE30DB25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0A73E6A4-4F14-4C82-A296-279FECE4621B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A73E6A4-4F14-4C82-A296-279FECE4621B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A73E6A4-4F14-4C82-A296-279FECE4621B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467271C7-6A62-48EE-A7F4-38D3FE30DB25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467271C7-6A62-48EE-A7F4-38D3FE30DB25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467271C7-6A62-48EE-A7F4-38D3FE30DB25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467271C7-6A62-48EE-A7F4-38D3FE30DB25}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDF3397B-931E-410A-8DA5-59A7F39A3482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DDF3397B-931E-410A-8DA5-59A7F39A3482}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDF3397B-931E-410A-8DA5-59A7F39A3482}.Release|Any CPU.ActiveCfg = Release|Any CPU
