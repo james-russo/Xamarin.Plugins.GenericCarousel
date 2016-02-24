@@ -232,6 +232,10 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 		}
 
 		#region RotationFunctions
+
+		/// <summary>
+		/// Stops Rotation completely, StartRotation required to being again.
+		/// </summary>
 		public void StopRotation()
 		{
 			if (timer != null) {
@@ -240,6 +244,11 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 			}
 		}
 
+
+		/// <summary>
+		/// Starts an automatic rotation of this carousel. 
+		/// </summary>
+		/// <param name="secondsDelay">Time in seconds</param>
 		public void StartRotation(int secondsDelay = 5)
 		{
 			TimeOutDuration = TimeSpan.FromSeconds(secondsDelay).TotalMilliseconds;
@@ -274,6 +283,10 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 
 	public abstract class GenericCarouselView : Frame
 	{
+		/// <summary>
+		/// Provides the implementation when a derived GenericCarouselView is swiped either left or right respectively.
+		/// If not implemented the event listener (native) will still capture the event but will not fire anything.
+		/// </summary>
 		public interface ISwipeable
 		{
 			void SwipeLeft();
@@ -281,6 +294,10 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 			void SwipeRight();
 		}
 
+		/// <summary>
+		/// Provides the implementation when a derived GenericCarouselView is clicked on.
+		/// /// If not implemented the event listener (native) will still capture the event but will not fire anything.
+		/// </summary>
 		public interface INavigatable
 		{
 			void Navigate();

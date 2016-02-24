@@ -56,7 +56,7 @@ namespace Xamarin.Plugins.GenericCarousel.Droid
 
 				result = true;
 			} catch (Exception ex) {
-				Console.WriteLine (ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
 			}
 
 			return result;

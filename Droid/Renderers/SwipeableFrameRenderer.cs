@@ -67,8 +67,6 @@ namespace Xamarin.Plugins.GenericCarousel.Droid.Renderers
 		{
 			_detector.OnTouchEvent (e.Event);
 		}
-
-
 	}
 }
 
