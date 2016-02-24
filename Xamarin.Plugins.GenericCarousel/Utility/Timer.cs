@@ -4,12 +4,6 @@ using System.Threading.Tasks;
 
 namespace Xamarin.Plugins.GenericCarousel
 {
-	public enum Orientation
-	{
-		Landscape,
-		Portrait
-	}
-
 		internal delegate void TimerCallback(object state);
 
 		internal sealed class Timer : CancellationTokenSource

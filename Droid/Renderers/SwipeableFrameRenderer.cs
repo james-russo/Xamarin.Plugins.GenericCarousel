@@ -7,13 +7,14 @@ using Xamarin.Plugins.GenericCarousel.Droid.Renderers;
 using Xamarin.Forms;
 using Android.Widget;
 using Android.Views;
+using ISwipeable = Xamarin.Plugins.GenericCarousel.Controls.GenericCarouselView.ISwipeable;
+using INavigatable = Xamarin.Plugins.GenericCarousel.Controls.GenericCarouselView.INavigatable;
 
 [assembly: ExportRenderer (typeof(GenericCarouselView), typeof(SwipeableFrameRenderer))]
 namespace Xamarin.Plugins.GenericCarousel.Droid.Renderers
 {
-	public class SwipeableFrameRenderer : ViewRenderer<GenericCarouselView, LinearLayout>
+	public class SwipeableFrameRenderer : ViewRenderer<GenericCarouselView, Android.Views.View>
 	{	
-
 		private readonly SwipeGestureListener _listener;
 		private readonly GestureDetector _detector;
 
@@ -21,7 +22,6 @@ namespace Xamarin.Plugins.GenericCarousel.Droid.Renderers
 		{
 			_listener = new SwipeGestureListener ();
 			_detector = new GestureDetector (_listener);
-
 			_listener.Swipe += Listener_Swipe;
 		}
 
@@ -29,13 +29,16 @@ namespace Xamarin.Plugins.GenericCarousel.Droid.Renderers
 		{
 			switch (e) {
 			case SwipeGestureListener.SwipeType.Left:
-				((GenericCarouselView)Element).SwipeLeft ();
+				if(Element is ISwipeable)
+					((ISwipeable)Element).SwipeLeft ();
 				break;
 			case SwipeGestureListener.SwipeType.Right:
-				((GenericCarouselView)Element).SwipeRight ();
+				if(Element is ISwipeable)
+					((ISwipeable)Element).SwipeRight ();
 				break;
 			case SwipeGestureListener.SwipeType.Tap:
-				((GenericCarouselView)Element).NavigateTo ();
+				if(Element is INavigatable)
+					((INavigatable)Element).Navigate ();
 				break;
 			}
 		}

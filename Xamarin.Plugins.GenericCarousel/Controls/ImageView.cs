@@ -3,12 +3,12 @@ using Xamarin.Forms;
 
 namespace Xamarin.Plugins.GenericCarousel
 {
-	public class ImageView : GenericCarousel.Controls.GenericCarouselView
+	internal class ImageView : GenericCarousel.Controls.GenericCarouselView,
+		Xamarin.Plugins.GenericCarousel.Controls.GenericCarouselView.ISwipeable, 
+		Xamarin.Plugins.GenericCarousel.Controls.GenericCarouselView.INavigatable
 	{
 		public ImageView (GenericCarousel.Controls.GenericCarousel gc, string url) :base(gc)
 		{
-			this.Orientation = StackOrientation.Vertical;
-
 			var image = new Image (){
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
@@ -23,20 +23,23 @@ namespace Xamarin.Plugins.GenericCarousel
 			
 			};
 
-			Children.Add (image);
-
-			Children.Add (new Label () {
-				Text = url
-			});
+			Content = image;
 		}
 
-		#region implemented abstract members of GenericCarouselView
-
-		public override void NavigateTo ()
+		public void SwipeLeft ()
 		{
+			Carousel.SwipeLeft ();
 		}
 
-		#endregion
+		public void SwipeRight ()
+		{
+			Carousel.SwipeRight ();
+		}
+
+		public void Navigate ()
+		{
+			//Just a demo
+		}
 	}
 }
 

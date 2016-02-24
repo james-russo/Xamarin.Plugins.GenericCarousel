@@ -35,6 +35,7 @@ namespace Xamarin.Plugins.GenericCarousel.Droid
 
 			try {
 				float diffY = e2.GetY () - e1.GetY ();
+
 				float diffX = e2.GetX () - e1.GetX ();
 
 				if (Math.Abs (diffX) > Math.Abs (diffY)) {
