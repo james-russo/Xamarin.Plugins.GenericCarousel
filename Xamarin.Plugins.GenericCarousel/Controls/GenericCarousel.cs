@@ -174,8 +174,6 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 
 			var nextImage = ContentViews [nextNumber];
 
-			Dots [imageNumber].Opacity = 0.5;
-
 			nextImage.Layout (new Rectangle (new Point (CurrentView.Width, 0), CurrentView.Bounds.Size));
 
 			var current = CurrentView;
@@ -185,6 +183,8 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 			CurrentView = (GenericCarouselView)nextImage;
 
 			await nextImage.LayoutTo (new Rectangle (0, 0, CurrentView.Width, CurrentView.Height));
+
+			Dots [imageNumber].Opacity = 0.5;
 
 			Dots [nextNumber].Opacity = 1.0;
 
@@ -202,8 +202,6 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
 
 			var nextImage = ContentViews [nextNumber];
 
-			Dots [imageNumber].Opacity = 0.5;
-
 			nextImage.Layout (new Rectangle (new Point (-CurrentView.Width, 0), CurrentView.Bounds.Size));
 
 			var current = CurrentView;
@@ -213,6 +211,8 @@ namespace Xamarin.Plugins.GenericCarousel.Controls
             CurrentView = (GenericCarouselView)nextImage;
 
 			await nextImage.LayoutTo (new Rectangle (0, 0, CurrentView.Width, CurrentView.Height));
+
+			Dots [imageNumber].Opacity = 0.5;
 
 			Dots [nextNumber].Opacity = 1.0;
 
